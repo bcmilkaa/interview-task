@@ -1,0 +1,32 @@
+
+.doneList {
+    text-decoration: line-through;
+    color: #C8C8C8;
+}
+
+.doneListTitle {
+    color: #C8C8C8;
+    text-align: center;
+}
+
+.doneListElement {
+}
+
+.toDoList {
+    display: inline-block;
+    list-style: inside;
+    list-style-type: none;
+    text-align: left;
+    color: black;
+}
+
+.toDoListElement {
+    width: 300px;
+    border: outset;
+    border-color: white;
+}
+
+.toDoListTitle {
+    color: #C8C8C8;
+    text-align: center;
+}

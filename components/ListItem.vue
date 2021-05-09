@@ -1,7 +1,7 @@
 <template>
     <li>
         {{ todo.text }}
-        <button @click="$emit('remove', todo)">
+        <button @click="$emit('remove', this)"class="removeButton">
             X
         </button>
     </li>
@@ -11,9 +11,12 @@
 export default {
   props: {
     todo: {
-      type: Object,
-      done: false 
+      type: Object
     }
   }
 }
 </script>
+
+<style>
+    @import '../src/assets/Button.css';
+</style>

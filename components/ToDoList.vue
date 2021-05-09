@@ -1,48 +1,48 @@
 <template>
-	<div>
+		<div>
 		<InputBar 
 			v-model="newTodoText"
-			placeholder="New todo"
+			placeholder="Write your task here"
 			@keydown.enter="addTodo"
 		/>
-		<button_add @click="addTodo">ADD</button_add>
-		<ul v-if="todos.length">
+		<h2>
+		<button
+			class="addButton"
+			@click="addTodo">Add task
+		</button>
+		</h2>
+		<h1 class="toDoListTitle">Not finished tasks</h1>
+		<ul v-if="todos.length" class="toDoList">
 			<ListItem
+			    class="toDoListElement"
 				v-for="todo in todos"
-				v-if="!todo.done"
 				:key="todo.id"
 				:todo="todo"
-				@remove="isDone"
+				@remove="removeToDo(todo.id, todo, listdata)"
 			/>
 		</ul>
-		<p v-else>
-			Nothing left in the list. Add a new todo in the input above.
-		</p>
-		<ul v-if="todos.length">
-			<ListItem
-				v-for="todo in todos"
-				v-if="todo.done"
-				:key="todo.id"
-				:todo="todo"
-				@remove="isNotDone"
-			/>
-		</ul>
-		<p v-else>
-			Nothing done so far, don't be lazzy!
-		</p>
+		<ul v-else>
+            Nothing to do!
+        </ul>
+		<DoneList :listTodo="dones" @clicked="addDone"
+		/>
 	</div>
 </template>
 
 <script>
-import InputBar from './InputBar.vue'
-import ListItem from './ListItem.vue'
+	import InputBar from './InputBar.vue'
+	import ListItem from './ListItem.vue'
+	import DoneList from './DoneList.vue' 
 
-let nextTodoId = 1
+let nextTodoId = 0
 
 export default {
 	components: {
-		InputBar, ListItem
+		InputBar, ListItem, DoneList
 	},
+	props: [
+	'listdata'
+	],
   data () {
     return {
 			newTodoText: '',
@@ -59,7 +59,8 @@ export default {
 					done: false,
 					nextTodoId: nextTodoId++
 				}
-			]
+			],
+	  dones: []
     }
   },
 	methods: {
@@ -75,12 +76,18 @@ export default {
 			}
 		},
 
-		isDone (Todo) {
-			Todo.done = true
-		},
+		removeToDo (idToRemove, todo, listdata) {
+			this.todos = this.todos.filter(todo => {
+				return todo.id !== idToRemove
+			})
+			this.dones.push(todo)
+	},
 
-		isNotDone (Todo) {
-			Todo.done = false
+		addDone(toDotoAdd) {
+			this.dones = this.dones.filter(todo => {
+				return todo.id !== toDotoAdd.id
+			})
+			this.todos.push(toDotoAdd)	
 		}
 
 	}
@@ -89,12 +96,5 @@ export default {
 </script>
 
 <style>
-	button_add {
-    background-color: #1dcaff;
-    border: 1px solid  #1dcaff;
-    positioning: absolute;
-bottom: 0px;
-
-}
-			
-			</style>
+	@import '../src/assets/List.css';
+</style>

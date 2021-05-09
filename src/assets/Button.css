@@ -1,0 +1,16 @@
+.addButton {
+    background-color: limegreen;
+    color: white;
+    width: 150px;
+    border-radius: 28px !important;
+    border-color: limegreen;
+    padding: 0.5rem 0.5rem 0.5rem;
+    border-style: solid;
+}
+
+.removeButton {
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    padding: 0.3rem 0.5rem 0.3rem;
+}
