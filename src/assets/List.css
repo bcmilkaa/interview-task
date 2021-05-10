@@ -1,15 +1,22 @@
 
 .doneList {
     text-decoration: line-through;
+    display: inline-block;
+    list-style: inside;
+    list-style-type: none;
+    text-align: left;
     color: #C8C8C8;
+
 }
 
 .doneListTitle {
     color: #C8C8C8;
-    text-align: center;
 }
 
 .doneListElement {
+    width: 300px;
+    border: outset;
+    border-color: white;
 }
 
 .toDoList {
@@ -28,5 +35,4 @@
 
 .toDoListTitle {
     color: #C8C8C8;
-    text-align: center;
 }

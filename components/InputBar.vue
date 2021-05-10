@@ -27,10 +27,5 @@ export default {
 </script>
 
 <style>
-    input[type=text] {
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-    }
+    @import '../src/assets/InputBar.css';
 </style>

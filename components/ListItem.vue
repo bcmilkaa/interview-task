@@ -1,7 +1,8 @@
 <template>
     <li>
+        <input class="checkBox" type="checkbox" v-model="todo.done" disabled/>
         {{ todo.text }}
-        <button @click="$emit('remove', this)"class="removeButton">
+        <button @click="$emit('remove', this)" class="removeButton">
             X
         </button>
     </li>
@@ -11,7 +12,7 @@
 export default {
   props: {
     todo: {
-      type: Object
+          type: Object
     }
   }
 }

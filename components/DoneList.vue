@@ -1,13 +1,13 @@
 <template>
     <div>
         <h1 class="doneListTitle">Finished tasks</h1>
-        <ul v-if="listTodo.length" class="doneList">
+        <ul v-if="dones.length" class="doneList">
             <ListItem 
                       class="doneListElement"
-                      v-for="todo in listTodo"
+                      v-for="todo in dones"
                       :key="todo.id"
                       :todo="todo"
-                      @remove="isNotDone(todo.id, todo)" />
+                      @remove="NotDone(todo.id, todo)" />
         </ul>
         <ul v-else>
             Nothing done so far, don't be lazzy!
@@ -25,12 +25,12 @@ export default {
         ListItem, ToDoList
         },
         props: [
-            'listTodo'
+            'dones'
         ],
 
         methods: {
 
-        isNotDone(idToRemove, todo) {
+        NotDone(idToRemove, todo) {
             this.$emit('clicked', todo, todo.id)
         }
 

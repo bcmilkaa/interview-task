@@ -1,6 +1,7 @@
 <template>
 		<div>
-		<InputBar 
+		<InputBar
+			class="inputBarToDoList"
 			v-model="newTodoText"
 			placeholder="Write your task here"
 			@keydown.enter="addTodo"
@@ -24,8 +25,10 @@
 		<ul v-else>
             Nothing to do!
         </ul>
-		<DoneList :listTodo="dones" @clicked="addDone"
+		<h2>
+		<DoneList :dones="dones" @clicked="addDone"
 		/>
+		</h2>
 	</div>
 </template>
 
@@ -80,6 +83,7 @@ export default {
 			this.todos = this.todos.filter(todo => {
 				return todo.id !== idToRemove
 			})
+			todo.done = true
 			this.dones.push(todo)
 	},
 
@@ -87,6 +91,7 @@ export default {
 			this.dones = this.dones.filter(todo => {
 				return todo.id !== toDotoAdd.id
 			})
+			toDotoAdd.done = false
 			this.todos.push(toDotoAdd)	
 		}
 

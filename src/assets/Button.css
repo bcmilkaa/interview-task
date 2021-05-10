@@ -12,5 +12,10 @@
     background-color: white;
     border-color: white;
     border-style: solid;
+}
+
+.checkBox {
+    border-color: black;
+    border-style: solid;
     padding: 0.3rem 0.5rem 0.3rem;
 }

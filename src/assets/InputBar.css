@@ -1,0 +1,11 @@
+.inputBarToDoList {
+    border-radius: 10px !important;
+    border-style: solid;
+    border: outset;
+    border-color: white;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    text-align:left;
+}
+
