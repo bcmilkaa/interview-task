@@ -22,8 +22,8 @@
 				@remove="removeToDo(todo.id, todo, listdata)"
 			/>
 		</ul>
-		<ul v-else>
-            Nothing to do!
+		<ul v-else class="toDoList">
+        Nothing to do!
         </ul>
 		<h2>
 		<DoneList :dones="dones" @clicked="addDone"

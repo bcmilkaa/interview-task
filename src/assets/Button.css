@@ -1,21 +1,28 @@
 .addButton {
-    background-color: limegreen;
+    background-color: #33CC33;
     color: white;
-    width: 150px;
+    width: 125px;
     border-radius: 28px !important;
-    border-color: limegreen;
-    padding: 0.5rem 0.5rem 0.5rem;
+    border-color: #33CC33;
+    padding: 0.3rem 0.5rem 0.3rem;
     border-style: solid;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size:large;
 }
 
 .removeButton {
     background-color: white;
     border-color: white;
     border-style: solid;
+    float: right;
+    font-size: large;
+    
 }
 
 .checkBox {
     border-color: black;
     border-style: solid;
-    padding: 0.3rem 0.5rem 0.3rem;
+    padding: 0.3rem 0rem 0.3rem;
 }

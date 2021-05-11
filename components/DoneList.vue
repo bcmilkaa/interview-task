@@ -9,7 +9,7 @@
                       :todo="todo"
                       @remove="NotDone(todo.id, todo)" />
         </ul>
-        <ul v-else>
+        <ul v-else class="doneList">
             Nothing done so far, don't be lazzy!
         </ul>
     </div>

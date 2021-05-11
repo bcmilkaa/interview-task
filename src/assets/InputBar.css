@@ -5,7 +5,9 @@
     border-color: white;
     width: 300px;
     box-sizing: border-box;
-    padding: 12px 20px;
-    text-align:left;
+    padding: 12px 8px;
+    text-align: left;
+    position: relative;
+    left: 51.2%;
+    transform: translateX(-51%);
 }
-
