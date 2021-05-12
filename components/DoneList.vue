@@ -2,8 +2,7 @@
     <div>
         <h1 class="doneListTitle">Finished tasks</h1>
         <ul v-if="dones.length" class="doneList">
-            <ListItem 
-                      class="doneListElement"
+            <ListItem class="doneListElement"
                       v-for="todo in dones"
                       :key="todo.id"
                       :todo="todo"
@@ -16,13 +15,13 @@
 </template>
 
 <script>
-import ListItem from './ListItem.vue';
-import ToDoList from './ToDoList.vue';
+    import ListItem from './ListItem.vue';
+    import ToDoList from './ToDoList.vue';
 
 
-export default {
-	components: {
-        ListItem, ToDoList
+    export default {
+        components: {
+            ListItem, ToDoList
         },
         props: [
             'dones'
@@ -30,12 +29,13 @@ export default {
 
         methods: {
 
-        NotDone(idToRemove, todo) {
-            this.$emit('clicked', todo, todo.id)
-        }
+            // Triggers the addDone Method from the parent ToDoList
+            NotDone(idToRemove, todo) {
+                this.$emit('clicked', todo, todo.id)
+            }
 
-	}
-}
+        }
+    }
 
 </script>
 

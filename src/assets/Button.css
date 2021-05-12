@@ -7,9 +7,9 @@
     padding: 0.3rem 0.5rem 0.3rem;
     border-style: solid;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size:large;
+    left: 51%;
+    transform: translateX(-51%);
+    font-size: large;
 }
 
 .removeButton {
@@ -18,7 +18,6 @@
     border-style: solid;
     float: right;
     font-size: large;
-    
 }
 
 .checkBox {

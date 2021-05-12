@@ -1,27 +1,27 @@
 <template>
-  <div id="app">
-    <h1>TO-DO List</h1>
-      <ToDoList/>
-  </div>
+    <div id="app">
+        <h1>TO-DO List</h1>
+        <ToDoList />
+    </div>
 </template>
 
 <script>
 
-import ToDoList from '../components/ToDoList.vue'
-   
+    import ToDoList from '../components/ToDoList.vue'
 
-export default {
+
+    export default {
         name: 'app',
         components: {
             ToDoList
-        }, 
+        },
     }
 </script>
 
 <style>
     #app {
         font-family: Calibri;
-        font-weight:500;
+        font-weight: 500;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: #C8C8C8;
@@ -31,8 +31,8 @@ export default {
         margin-left: 0px;
         margin-bottom: 30px;
     }
-    h1 {
-        text-align:center;
-    }
 
+    h1 {
+        text-align: center;
+    }
 </style>

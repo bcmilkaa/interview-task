@@ -1,5 +1,5 @@
 <template>
-		<div>
+	<div>
 		<InputBar
 			class="inputBarToDoList"
 			v-model="newTodoText"
@@ -12,7 +12,7 @@
 			@click="addTodo">Add task
 		</button>
 		</h2>
-		<h1 class="toDoListTitle">Not finished tasks</h1>
+		<h2 class="toDoListTitle">Not finished tasks</h2>
 		<ul v-if="todos.length" class="toDoList">
 			<ListItem
 			    class="toDoListElement"
@@ -22,13 +22,12 @@
 				@remove="removeToDo(todo.id, todo, listdata)"
 			/>
 		</ul>
-		<ul v-else class="toDoList">
+		<ul v-else class="toDoListTitle">
         Nothing to do!
         </ul>
-		<h2>
+		
 		<DoneList :dones="dones" @clicked="addDone"
 		/>
-		</h2>
 	</div>
 </template>
 
@@ -37,6 +36,7 @@
 	import ListItem from './ListItem.vue'
 	import DoneList from './DoneList.vue' 
 
+// Initialises the toDo id
 let nextTodoId = 0
 
 export default {
@@ -67,6 +67,8 @@ export default {
     }
   },
 	methods: {
+		
+		// Adds the input at the inputbar to the toDo-List and clears the inputbar.
 		addTodo () {
 			const trimmedText = this.newTodoText.trim()
 			if (trimmedText) {
@@ -78,15 +80,17 @@ export default {
 				this.newTodoText = ''
 			}
 		},
-
-		removeToDo (idToRemove, todo, listdata) {
+		
+		// Removes the toDo with the ID = idToRemove and adds it to the dones list.
+		removeToDo (idToRemove, todo) {
 			this.todos = this.todos.filter(todo => {
 				return todo.id !== idToRemove
 			})
 			todo.done = true
 			this.dones.push(todo)
-	},
-
+		},
+		
+		// Removes the done toDo from the done list and adds it to the toDo-List.
 		addDone(toDotoAdd) {
 			this.dones = this.dones.filter(todo => {
 				return todo.id !== toDotoAdd.id
@@ -97,7 +101,6 @@ export default {
 
 	}
 }
-
 </script>
 
 <style>

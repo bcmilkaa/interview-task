@@ -1,13 +1,16 @@
 .inputBarToDoList {
     border-radius: 10px !important;
-    border-style: solid;
     border: outset;
     border-color: white;
+    border-width: 0.1px;
     width: 300px;
     box-sizing: border-box;
     padding: 12px 8px;
     text-align: left;
     position: relative;
-    left: 51.2%;
-    transform: translateX(-51%);
+    left: 51.5%;
+    transform: translateX(-52.5%);
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
 }
